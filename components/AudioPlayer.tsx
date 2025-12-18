@@ -1,6 +1,5 @@
-
-import React, { useState, useEffect, useRef } from 'react';
-import { Play, Pause, Square, Headphones } from 'lucide-react';
+import { useState, useEffect, useRef, FC } from "react";
+import { Play, Pause, Square, Headphones } from "lucide-react";
 
 interface AudioPlayerProps {
   title: string;
@@ -14,7 +13,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ title, text }) => {
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
 
   useEffect(() => {
-    if (!('speechSynthesis' in window)) {
+    if (!("speechSynthesis" in window)) {
       setSupported(false);
       return;
     }
@@ -31,7 +30,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ title, text }) => {
     } else {
       const fullText = `${title}. . ${text}`;
       const utterance = new SpeechSynthesisUtterance(fullText);
-      utterance.lang = 'pt-BR';
+      utterance.lang = "pt-BR";
       utterance.rate = 0.9;
       utterance.pitch = 1;
 
@@ -67,33 +66,33 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({ title, text }) => {
   return (
     <div className="w-full h-full flex flex-col justify-center items-center text-paper p-6 md:p-0">
       <div className="flex items-center gap-3 mb-2">
-         <Headphones className="w-5 h-5 opacity-80" />
-         <span className="text-xs uppercase tracking-[0.2em] font-bold">
-          {isPlaying ? 'Ouvindo agora' : 'Ouvir Artigo'}
+        <Headphones className="w-5 h-5 opacity-80" />
+        <span className="text-xs uppercase tracking-[0.2em] font-bold">
+          {isPlaying ? "Ouvindo agora" : "Ouvir Artigo"}
         </span>
       </div>
-      
+
       <div className="flex items-center gap-4">
         {!isPlaying || isPaused ? (
-          <button 
+          <button
             onClick={handlePlay}
             className="group flex items-center gap-2 text-white hover:text-ink transition-colors font-serif text-xl md:text-2xl font-medium"
           >
-            <span>{isPaused ? 'Continuar' : 'Play'}</span>
+            <span>{isPaused ? "Continuar" : "Play"}</span>
             <div className="w-8 h-8 rounded-full border border-white flex items-center justify-center group-hover:bg-white group-hover:border-white transition-all">
-                <Play className="w-3 h-3 fill-current group-hover:text-accent" />
+              <Play className="w-3 h-3 fill-current group-hover:text-accent" />
             </div>
           </button>
         ) : (
           <div className="flex items-center gap-4">
-            <button 
+            <button
               onClick={handlePause}
               className="text-white hover:text-ink transition-colors p-2"
               title="Pausar"
             >
               <Pause className="w-8 h-8 fill-current" />
             </button>
-            <button 
+            <button
               onClick={handleStop}
               className="text-white/70 hover:text-ink transition-colors text-xs uppercase tracking-wider font-bold"
               title="Parar"

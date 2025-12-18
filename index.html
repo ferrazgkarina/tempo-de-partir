@@ -50,7 +50,6 @@
         -moz-osx-font-smoothing: grayscale;
       }
 
-      /* Transições suaves para toda a página */
       .animate-fade-in {
         animation: fadeIn 0.8s ease-out forwards;
       }
@@ -66,7 +65,6 @@
         }
       }
 
-      /* Custom Scrollbar Editorial */
       .custom-scrollbar::-webkit-scrollbar {
         width: 4px;
       }
@@ -87,17 +85,20 @@
     <script type="importmap">
       {
         "imports": {
+          "react": "https://esm.sh/react@19.0.0",
+          "react-dom": "https://esm.sh/react-dom@19.0.0",
+          "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+          "react/jsx-runtime": "https://esm.sh/react@19.0.0/jsx-runtime",
+          "lucide-react": "https://esm.sh/lucide-react@0.460.0?external=react",
+          "react-router-dom": "https://esm.sh/react-router-dom@7.0.0?external=react,react-dom",
           "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-          "react/": "https://esm.sh/react@^19.2.3/",
-          "react": "https://esm.sh/react@^19.2.3",
-          "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
-          "react-router-dom": "https://esm.sh/react-router-dom@^7.10.1"
+          "react/": "https://esm.sh/react@^19.2.3/"
         }
       }
     </script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="main.tsx"></script>
+    <script type="module" src="index.tsx"></script>
   </body>
 </html>
