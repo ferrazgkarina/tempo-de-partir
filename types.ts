@@ -1,9 +1,8 @@
-
 export enum Category {
   ROTA_RITMO = "Lugares para Estar",
   BAGAGEM = "Para Ler e Ver",
   MAPA_TEMPO = "O Tempo e o Céu",
-  VIAGENS_QUEM_VIAJA = "Viagens de quem viaja"
+  VIAGENS_QUEM_VIAJA = "Viagens de quem viaja",
 }
 
 export interface Article {

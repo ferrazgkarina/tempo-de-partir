@@ -1,25 +1,29 @@
-
-import React, { useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { Navbar } from './components/Navbar';
-import { Footer } from './components/Footer';
-import { Home } from './pages/Home';
-import { Editorial } from './pages/Editorial';
-import { ArticleDetail } from './pages/ArticleDetail';
-import { Manifesto } from './pages/Manifesto';
-import { Contact } from './pages/Contact';
+import { useEffect, FC } from "react";
+import {
+  HashRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import { Navbar } from "./components/Navbar.tsx";
+import { Footer } from "./components/Footer.tsx";
+import { Home } from "./pages/Home.tsx";
+import { Editorial } from "./pages/Editorial.tsx";
+import { ArticleDetail } from "./pages/ArticleDetail.tsx";
+import { Manifesto } from "./pages/Manifesto.tsx";
+import { Contact } from "./pages/Contact.tsx";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-  
-  return null;
-}
 
-const App: React.FC = () => {
+  return null;
+};
+
+const App: FC = () => {
   return (
     <Router>
       <ScrollToTop />

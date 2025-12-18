@@ -1,5 +1,4 @@
-
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState, FC } from "react";
 
 export const ReadingProgress: React.FC = () => {
   const [width, setWidth] = useState(0);
@@ -9,22 +8,22 @@ export const ReadingProgress: React.FC = () => {
     const scrollTop = el.scrollTop || document.body.scrollTop;
     const scrollHeight = el.scrollHeight || document.body.scrollHeight;
     const clientHeight = el.clientHeight || document.body.clientHeight;
-    
+
     const height = scrollHeight - clientHeight;
     const scrolled = (scrollTop / height) * 100;
-    
+
     setWidth(scrolled);
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', scrollHeight);
-    return () => window.removeEventListener('scroll', scrollHeight);
+    window.addEventListener("scroll", scrollHeight);
+    return () => window.removeEventListener("scroll", scrollHeight);
   }, []);
 
   return (
     <div className="fixed top-0 left-0 w-full h-1.5 z-[60] bg-transparent">
-      <div 
-        className="h-full bg-accent transition-all duration-150 ease-out" 
+      <div
+        className="h-full bg-accent transition-all duration-150 ease-out"
         style={{ width: `${width}%` }}
       />
     </div>
