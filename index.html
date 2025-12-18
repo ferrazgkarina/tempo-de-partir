@@ -32,9 +32,56 @@
       };
     </script>
     <style>
+      :root {
+        --color-paper: #f9f5f1;
+        --color-ink: #01172f;
+        --color-earth: #6b6f54;
+        --color-accent: #c57658;
+        --color-gold: #c9a86a;
+        --color-plum: #8a4f7d;
+      }
+
       body {
-        background-color: #f4efe7;
+        background-color: #f9f5f1;
         color: #01172f;
+        margin: 0;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* Transições suaves para toda a página */
+      .animate-fade-in {
+        animation: fadeIn 0.8s ease-out forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Custom Scrollbar Editorial */
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(1, 23, 47, 0.1);
+        border-radius: 10px;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: rgba(1, 23, 47, 0.2);
       }
     </style>
     <script type="importmap">
@@ -51,7 +98,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <!-- Ponto de entrada do Vite -->
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="index.tsx"></script>
   </body>
 </html>
