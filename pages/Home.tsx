@@ -1,7 +1,7 @@
 import { useState, FC } from "react";
 import { Link } from "react-router-dom";
-import { MOCK_ARTICLES } from "../constants.ts";
-import { Category } from "../types.ts";
+import { MOCK_ARTICLES } from "../constants";
+import { Category } from "../types";
 import {
   ArrowRight,
   Plus,
@@ -14,8 +14,10 @@ import {
 
 export const Home: FC = () => {
   const [expandedId, setExpandedId] = useState<string | null>(null);
+
   const mainArticle = MOCK_ARTICLES[0];
   const sidebarArticles = MOCK_ARTICLES.slice(1, 4);
+  const feedArticles = MOCK_ARTICLES.slice(1);
 
   const toggleExpand = (id: string) => {
     setExpandedId(expandedId === id ? null : id);
