@@ -1,7 +1,7 @@
 import { useState, FC } from "react";
-import { MOCK_ARTICLES } from "../constants.ts";
-import { ArticleCard } from "../components/ArticleCard.tsx";
-import { Category } from "../types.ts";
+import { MOCK_ARTICLES } from "../constants";
+import { ArticleCard } from "../components/ArticleCard";
+import { Category } from "../types";
 
 export const Editorial: FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>("Todas");
